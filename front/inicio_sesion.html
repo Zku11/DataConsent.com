@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <title>Web Inicio Sesión</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" type="text/css" href="../estilos/estilo_general.css">
+  <style type="text/css">
+
+      header{
+        text-align: center;
+      }
+
+      header img{
+        float: none;
+      }
+
+  </style>
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6Ld3NyAkAAAAABwwCqkeAz_Oa9k02zXes7paHVQW">
+  </script>
+
+  <script>
+    grecaptcha.ready(function() {
+    grecaptcha.execute('6Ld3NyAkAAAAABwwCqkeAz_Oa9k02zXes7paHVQW', {action: 'inicio_sesion'})
+    .then(function(token) {
+    var recaptchaResponse = document.getElementById('recaptchaResponse');
+    recaptchaResponse.value = token;
+    });});
+  </script>
+
+ </head>
+ <body>
+<header>
+    <img src="../imgs/logo2.png">
+    <div class="limpiaFloat"></div>
+  </header>
+  <div class="cajaFormulario">
+  <h2>Iniciar Sesión</h2>
+
+  <form id="loginForm" action="../front/panel_empresa.php" method="post">
+
+    <div class="bloqueInput">
+    <label for="eMail">E-mail:</label>
+    <input type="email" class="campoEditable" name="eMail" id="eMail" required>
+    <div class="limpiaFloat"></div>
+    </div>
+
+    <div class="bloqueInput">
+    <label for="contra">Contraseña:</label>
+    <input type="password" class="campoEditable" name="password" id="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
+    <div class="limpiaFloat"></div>
+    </div>
+
+    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+    <input type="hidden" name="recaptcha_action" id="recaptchaAction" value="inicio_sesion">
+
+    <input type="submit" class="boton clicable" value="Enviar">
+  </form>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+@media (orientation: landscape) {
+.bloqueInput label{
+    text-align: left;
+    font-size: 1vw;
+    height: 5vw;
+    width: 20vw;
+    float: left;
+    margin-top: 1.5vw;
+    margin-left: 2vw;
+  }
+
+  input[type="checkbox"]{
+    width: 2vw;
+    height: 2vw;
+    float: right;
+    margin-right: 4vw;
+    margin-top: 1vw;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"]{
+    width: 25vw;
+  }
+}
+
+@media (orientation: Portrait) {
+  .bloqueInput label{
+    text-align: left;
+    font-size: 3.5vw;
+    height: 10vw;
+    width: 40vw;
+    float: left;
+    margin-top: 2vw;
+    margin-left: 5vw;
+  }
+
+  input[type="checkbox"]{
+    width: 11vw;
+    height: 11vw;
+    margin-top: 2.5vw;
+    margin-right: 6vw;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"]{
+    width: 40vw;
+  }
+}
